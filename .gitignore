@@ -1,0 +1,55 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Local enrichment caches and generated reports
+.*-cache.json
+*-calibration-report.json
+*-enrichment-report.json
+*-poi-evidence.json
+*-poi-ai-review.md
+*-poi-ai-decisions.md
+*-poi-decisions.md
+*-poi-final-decisions.md
+*-poi-overrides.json
+*-rejected-aliases.json
+*-rejected-rescue-decisions.md
+*-alias-report.json
+# Database
+*.db
+*.sqlite
+*.sqlite3
+db/migrations/*.sql
+# TypeScript cache
+*.tsbuildinfo
+# Build outputs
+dist/
+build/
+# Test coverage
+coverage/
+.nyc_output/
