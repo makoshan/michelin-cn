@@ -32,6 +32,7 @@ dist-ssr
 *-calibration-report.json
 *-enrichment-report.json
 *-poi-evidence.json
+*-web-evidence.json
 *-poi-ai-review.md
 *-poi-ai-decisions.md
 *-poi-decisions.md

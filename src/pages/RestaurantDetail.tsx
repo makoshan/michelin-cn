@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ChevronLeft, Heart, Share2, Navigation, Phone, Globe, Clock, MapPin, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Heart, Share2, Navigation, Phone, Globe, Clock, MapPin, X } from "lucide-react";
 import { trpc } from "@/providers/trpc";
 import { useAuth } from "@/hooks/useAuth";
 import { useLocale } from "@/hooks/useLocale";
@@ -71,12 +71,19 @@ export default function RestaurantDetail() {
     ? restaurant.imageUrls
     : [restaurant.imageUrl || `https://picsum.photos/seed/${restaurant.id}/800/500.webp`];
   const heroImg = galleryImages[Math.min(selectedImage, galleryImages.length - 1)];
-  const heroImages = galleryImages.length > 1
-    ? [...galleryImages.slice(selectedImage), ...galleryImages.slice(0, selectedImage)].slice(0, 3)
-    : [heroImg];
+  const heroImages = galleryImages.slice(0, 3);
+  const twoHeroImages = galleryImages.slice(0, 2);
 
   const handleNavigate = () => {
     window.open(buildNavigationUrl(navProvider, restaurant), "_blank");
+  };
+
+  const showPrevImage = () => {
+    setSelectedImage((index) => (index - 1 + galleryImages.length) % galleryImages.length);
+  };
+
+  const showNextImage = () => {
+    setSelectedImage((index) => (index + 1) % galleryImages.length);
   };
 
   const handleShare = async () => {
@@ -101,21 +108,85 @@ export default function RestaurantDetail() {
     <div className="min-h-screen pb-8" style={{ backgroundColor: "var(--bg-primary)" }}>
       {/* Hero Image */}
       <div className="relative h-[45vh] overflow-hidden" style={{ backgroundColor: "var(--bg-primary)" }}>
-        {heroImages.length > 1 ? (
-          <div className={`grid h-full w-full gap-1 p-1 ${heroImages.length >= 3 ? "grid-cols-3" : "grid-cols-2"}`}>
-            {heroImages.map((image, index) => (
-              <div key={`${image}-${index}`} className="relative min-w-0 overflow-hidden rounded-sm" style={{ backgroundColor: "var(--bg-elevated)" }}>
+        <div className="h-full w-full sm:hidden">
+          <img
+            src={heroImg}
+            alt={`${restaurant.name} ${selectedImage + 1}`}
+            className="h-full w-full object-cover"
+            loading="eager"
+          />
+          {galleryImages.length > 1 && (
+            <>
+              <button
+                onClick={showPrevImage}
+                className="absolute left-4 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full backdrop-blur-sm"
+                style={{ backgroundColor: "rgba(0,0,0,0.36)" }}
+                aria-label="Previous image"
+              >
+                <ChevronLeft size={18} color="#fff" />
+              </button>
+              <button
+                onClick={showNextImage}
+                className="absolute right-4 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full backdrop-blur-sm"
+                style={{ backgroundColor: "rgba(0,0,0,0.36)" }}
+                aria-label="Next image"
+              >
+                <ChevronRight size={18} color="#fff" />
+              </button>
+              <div className="absolute bottom-24 left-1/2 z-20 flex -translate-x-1/2 gap-1.5">
+                {galleryImages.map((image, index) => (
+                  <button
+                    key={image}
+                    onClick={() => setSelectedImage(index)}
+                    className="h-1.5 rounded-full transition-all"
+                    style={{
+                      width: index === selectedImage ? "18px" : "6px",
+                      backgroundColor: index === selectedImage ? "var(--accent-gold)" : "rgba(255,255,255,0.55)",
+                    }}
+                    aria-label={`Show image ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+
+        {twoHeroImages.length > 1 ? (
+          <div className="hidden h-full w-full grid-cols-2 sm:grid lg:hidden">
+            {twoHeroImages.map((image, index) => (
+              <div key={`${image}-sm-${index}`} className="relative min-w-0 overflow-hidden" style={{ backgroundColor: "var(--bg-elevated)" }}>
                 <img
                   src={image}
                   alt={`${restaurant.name} ${index + 1}`}
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-cover"
                   loading={index === 0 ? "eager" : "lazy"}
                 />
               </div>
             ))}
           </div>
         ) : (
-          <LazyImage src={heroImg} alt={restaurant.name} seed={restaurant.name + restaurant.id} objectFit="contain" className="w-full h-full" />
+          <div className="hidden h-full w-full sm:block lg:hidden">
+            <LazyImage src={heroImg} alt={restaurant.name} seed={restaurant.name + restaurant.id} objectFit="cover" className="w-full h-full" />
+          </div>
+        )}
+
+        {heroImages.length > 1 ? (
+          <div className={`hidden h-full w-full lg:grid ${heroImages.length >= 3 ? "grid-cols-3" : "grid-cols-2"}`}>
+            {heroImages.map((image, index) => (
+              <div key={`${image}-lg-${index}`} className="relative min-w-0 overflow-hidden" style={{ backgroundColor: "var(--bg-elevated)" }}>
+                <img
+                  src={image}
+                  alt={`${restaurant.name} ${index + 1}`}
+                  className="h-full w-full object-cover"
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="hidden h-full w-full lg:block">
+            <LazyImage src={heroImg} alt={restaurant.name} seed={restaurant.name + restaurant.id} objectFit="cover" className="w-full h-full" />
+          </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent z-10" />
@@ -141,27 +212,8 @@ export default function RestaurantDetail() {
         </div>
       </div>
 
-      {galleryImages.length > 1 && (
-        <div className="max-w-3xl mx-auto px-4 -mt-12 relative z-20">
-          <div className="flex gap-2 overflow-x-auto pb-2">
-            {galleryImages.map((image, index) => (
-              <button
-                key={image}
-                onClick={() => setSelectedImage(index)}
-                className="relative h-16 w-20 flex-shrink-0 overflow-hidden rounded-lg transition-all"
-                style={{
-                  border: index === selectedImage ? "2px solid var(--accent-gold)" : "1px solid rgba(255,255,255,0.28)",
-                }}
-              >
-                <img src={image} alt={`${restaurant.name} ${index + 1}`} className="h-full w-full object-cover" loading="lazy" />
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
       {/* Info Panel */}
-      <div className={`max-w-3xl mx-auto px-4 relative z-10 ${galleryImages.length > 1 ? "-mt-4" : "-mt-20"}`}>
+      <div className="max-w-3xl mx-auto px-4 relative z-10 -mt-20">
         <div className="rounded-3xl p-6 sm:p-8" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)" }}>
           <div className="mb-4">
             <AwardBadge award={restaurant.award} size="lg" />

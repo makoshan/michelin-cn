@@ -21,6 +21,7 @@
     "aliases:pi-rejected": "node scripts/pi-rejected-aliases.cjs",
     "search:amap-rejected-aliases": "node scripts/search-rejected-amap-aliases.cjs",
     "evidence:rejected-web": "node scripts/brave-rejected-web-evidence.cjs",
+    "decide:pi-web-evidence": "node scripts/pi-web-evidence-decide.cjs",
     "decide:pi-rejected-rescue": "node scripts/pi-rescue-rejected-decide.cjs",
     "apply:rejected-rescue": "node scripts/apply-rejected-rescue.cjs",
     "apply:pi-poi": "node scripts/apply-pi-poi-decisions.cjs",
