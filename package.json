@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && esbuild api/boot.ts --platform=node --bundle --format=esm --outdir=dist --banner:js=\"import { createRequire } from 'module';const require = createRequire(import.meta.url);\"",
+    "build": "vite build && esbuild server/boot.ts --platform=node --bundle --format=esm --outdir=dist --banner:js=\"import { createRequire } from 'module';const require = createRequire(import.meta.url);\"",
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "NODE_ENV=production node dist/boot.js",
@@ -20,6 +20,7 @@
     "decide:pi-final": "node scripts/pi-poi-final-decide.cjs",
     "aliases:pi-rejected": "node scripts/pi-rejected-aliases.cjs",
     "search:amap-rejected-aliases": "node scripts/search-rejected-amap-aliases.cjs",
+    "evidence:rejected-web": "node scripts/brave-rejected-web-evidence.cjs",
     "decide:pi-rejected-rescue": "node scripts/pi-rescue-rejected-decide.cjs",
     "apply:rejected-rescue": "node scripts/apply-rejected-rescue.cjs",
     "apply:pi-poi": "node scripts/apply-pi-poi-decisions.cjs",
