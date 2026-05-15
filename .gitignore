@@ -33,6 +33,7 @@ dist-ssr
 *-enrichment-report.json
 *-poi-evidence.json
 *-web-evidence.json
+*-browser-evidence.json
 *-web-evidence-decisions.md
 *-poi-ai-review.md
 *-poi-ai-decisions.md

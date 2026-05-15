@@ -102,6 +102,18 @@ export function useStaticRestaurantsByCity(city: string) {
   return { data, isLoading };
 }
 
+const CITY_DISPLAY_ORDER = [
+  "杭州",
+  "上海",
+  "广州",
+  "北京",
+  "成都",
+  "深圳",
+  "香港",
+  "澳门",
+  "台北",
+];
+
 export function useStaticCities() {
   const [cities, setCities] = useState<{ city: string; count: number }[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -113,7 +125,14 @@ export function useStaticCities() {
         list.forEach(r => { counts[r.city] = (counts[r.city] || 0) + 1; });
         const sorted = Object.entries(counts)
           .map(([city, count]) => ({ city, count }))
-          .sort((a, b) => b.count - a.count);
+          .sort((a, b) => {
+            const aIndex = CITY_DISPLAY_ORDER.indexOf(a.city);
+            const bIndex = CITY_DISPLAY_ORDER.indexOf(b.city);
+            if (aIndex !== -1 || bIndex !== -1) {
+              return (aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex) - (bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex);
+            }
+            return b.count - a.count;
+          });
         setCities(sorted);
       })
       .catch(() => setCities([]))

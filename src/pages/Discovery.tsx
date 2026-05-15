@@ -15,7 +15,7 @@ const awards = [
   { value: "selected", labelKey: "award.selected" },
 ];
 
-const cities = ["杭州", "上海", "北京", "广州", "成都", "香港", "澳门", "台北"];
+const cities = ["杭州", "上海", "广州", "北京", "成都", "深圳", "香港", "澳门", "台北"];
 
 export default function Discovery() {
   const [searchParams] = useSearchParams();
