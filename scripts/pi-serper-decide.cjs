@@ -6,6 +6,7 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const city = process.env.REVIEW_CITY || "杭州";
 const evidencePath = path.join(root, `${city}-serper-rejected-evidence.json`);
+const dataPath = path.join(root, "public", "restaurants.json");
 const outputPath = path.join(root, `${city}-pi-serper-decisions.md`);
 
 if (!process.env.KIMI_API_KEY) {
@@ -13,7 +14,14 @@ if (!process.env.KIMI_API_KEY) {
   process.exit(1);
 }
 
-const evidence = JSON.parse(fs.readFileSync(evidencePath, "utf8")).map((item) => ({
+const restaurants = JSON.parse(fs.readFileSync(dataPath, "utf8"));
+const currentRejectedIds = new Set(
+  restaurants
+    .filter((restaurant) => restaurant.city === city && restaurant.aiPoiDecision === "rejected")
+    .map((restaurant) => restaurant.id),
+);
+
+const evidence = JSON.parse(fs.readFileSync(evidencePath, "utf8")).filter((item) => currentRejectedIds.has(item.id)).map((item) => ({
   id: item.id,
   name: item.name,
   nameEn: item.nameEn,
