@@ -18844,10 +18844,10 @@
   },
   {
     "id": 1110,
-    "name": "L'éclat 19",
+    "name": "L‘éclat19雷克拉法餐",
     "nameEn": "L'éclat 19",
     "city": "杭州",
-    "address": "Inside Vallie 酒店，85-3 Zhijiang 路，Xihu，杭州，中国se 大陆",
+    "address": "之江路85-3号(杭州vallie酒店内)",
     "latitude": "30.203099",
     "longitude": "120.138321",
     "award": "1-star",
@@ -18857,15 +18857,17 @@
     "website": null,
     "description": "主营法国菜。米其林一星餐厅，品质保证。值得一试的用餐体验。",
     "priceLabel": "奢华价位",
-    "nameZh": "光辉19",
+    "nameZh": "L‘éclat19雷克拉法餐",
     "imageUrl": "/michelin-photos/1110-leclat-19.jpg",
     "imageUrls": [
       "/michelin-photos/1110-leclat-19.jpg",
       "/michelin-photos/1110-leclat-19-2.jpg",
       "/michelin-photos/1110-leclat-19-3.jpg"
     ],
-    "aiPoiDecision": "rejected",
-    "aiPoiReason": "Pi/Kimi rejected: 候选为咖啡或无关餐厅，名称、地址体系都不能对应 *L'éclat 19*。"
+    "aiPoiDecision": "accepted",
+    "aiPoiReason": "Pi/Kimi rescued rejected via Baidu browser search: 百度结果直接给出“中文名为‘溪畔十九·雷克拉法餐’”，并注明在 **杭州 Vallie 婉丽酒店内**，与 `L'éclat 19`、酒店线索高度对应。",
+    "amapPoiId": "B0FFKT0JX3",
+    "amapLocation": "120.131726,30.196807"
   },
   {
     "id": 1111,
@@ -21058,10 +21060,10 @@
   },
   {
     "id": 1230,
-    "name": "Yue Ji (Binjiang)",
+    "name": "越稽·地道绍兴菜馆(星光大道店)",
     "nameEn": "Yue Ji (Binjiang)",
     "city": "杭州",
-    "address": "4F，大厦 1，期 1，Star 大道，228 Jiangnan 大道，Binjiang，杭州，中国se 大陆",
+    "address": "江南大道228号星光大道一期1幢4F(近必胜客)",
     "latitude": "30.2093797",
     "longitude": "120.2047897",
     "award": "bib-gourmand",
@@ -21071,15 +21073,17 @@
     "website": null,
     "description": "主营浙菜。必比登推介，性价比之选。值得一试的用餐体验。",
     "priceLabel": "中等价位",
-    "nameZh": "岳吉（滨江）",
+    "nameZh": "越稽·地道绍兴菜馆(星光大道店)",
     "imageUrl": "/michelin-photos/1230-yue-ji.jpg",
     "imageUrls": [
       "/michelin-photos/1230-yue-ji.jpg",
       "/michelin-photos/1230-yue-ji-2.jpg",
       "/michelin-photos/1230-yue-ji-3.jpg"
     ],
-    "aiPoiDecision": "rejected",
-    "aiPoiReason": "Pi/Kimi rejected: 候选为必胜客，属明显误配。"
+    "aiPoiDecision": "accepted",
+    "aiPoiReason": "Pi/Kimi rescued rejected via Baidu browser search: 结果明确写出中文名“越稽”，且地址到 **滨江区江南大道228号星光大道1期1号楼4F**，与源地址基本一致，可按同名同址找 POI。",
+    "amapPoiId": "B0JDT590TB",
+    "amapLocation": "120.209000,30.206928"
   },
   {
     "id": 1231,
@@ -21331,10 +21335,10 @@
   },
   {
     "id": 1240,
-    "name": "King's Choice (Huyu Road)",
+    "name": "金仲帮中餐厅",
     "nameEn": "King's Choice (Huyu Road)",
     "city": "杭州",
-    "address": "102，大厦 B，38 Huyu 路，Shangcheng，杭州，中国se 大陆",
+    "address": "虎玉路38号b幢102",
     "latitude": "30.2085777",
     "longitude": "120.145735",
     "award": "bib-gourmand",
@@ -21344,15 +21348,17 @@
     "website": null,
     "description": "主营杭帮菜。必比登推介，性价比之选。值得一试的用餐体验。",
     "priceLabel": "中等价位",
-    "nameZh": "King's Choice（呼玉路）",
+    "nameZh": "金仲帮中餐厅",
     "imageUrl": "/michelin-photos/1240-kings-choice.jpg",
     "imageUrls": [
       "/michelin-photos/1240-kings-choice.jpg",
       "/michelin-photos/1240-kings-choice-2.jpg",
       "/michelin-photos/1240-kings-choice-3.jpg"
     ],
-    "aiPoiDecision": "rejected",
-    "aiPoiReason": "Pi/Kimi rejected: 候选“金仲帮中餐厅”与 *King's Choice* 无明显名称对应。"
+    "aiPoiDecision": "accepted",
+    "aiPoiReason": "Pi/Kimi rescued rejected via Baidu browser search: 结果直接称“2024年杭州米其林指南”列有 **“金仲帮(虎玉路) King’s Choice (Huyu Road)”**，中英文对应关系明确。",
+    "amapPoiId": "B0FFLBNKNS",
+    "amapLocation": "120.150424,30.206313"
   },
   {
     "id": 1241,
@@ -21842,10 +21848,10 @@
   },
   {
     "id": 1266,
-    "name": "Xin Liu He",
+    "name": "新六和私房菜(益乐路店)",
     "nameEn": "Xin Liu He",
     "city": "杭州",
-    "address": "37 Yile 路，Xihu，杭州，中国se 大陆",
+    "address": "益乐路38号(忆邦精品酒店1楼)",
     "latitude": "30.285615",
     "longitude": "120.120452",
     "award": "bib-gourmand",
@@ -21855,15 +21861,17 @@
     "website": null,
     "description": "主营杭帮菜。必比登推介，性价比之选。值得一试的用餐体验。",
     "priceLabel": "中等价位",
-    "nameZh": "刘新和",
+    "nameZh": "新六和私房菜(益乐路店)",
     "imageUrl": "/michelin-photos/1266-xin-liu-he.jpg",
     "imageUrls": [
       "/michelin-photos/1266-xin-liu-he.jpg",
       "/michelin-photos/1266-xin-liu-he-2.jpg",
       "/michelin-photos/1266-xin-liu-he-3.jpg"
     ],
-    "aiPoiDecision": "rejected",
-    "aiPoiReason": "Pi/Kimi rejected: 高德、百度均无与 *Xin Liu He* / **新六合** 可合理对应的餐厅名，地址与名称支撑不足。"
+    "aiPoiDecision": "accepted",
+    "aiPoiReason": "Pi/Kimi rescued rejected via Baidu browser search: 虽然摘要措辞不稳，但已出现“Yile Road 的音近可能对应”及“大众点评标题：**益乐路的新六和餐厅**”，英文 `Xin Liu He` 与中文“新六和”匹配度高，地址也能对上益乐路线索。",
+    "amapPoiId": "B0FFJO3K1X",
+    "amapLocation": "120.114048,30.279188"
   },
   {
     "id": 1267,
@@ -22952,10 +22960,10 @@
   },
   {
     "id": 1325,
-    "name": "Wan Li (Linping)",
+    "name": "杭州临平万丽酒店·万丽轩中餐厅",
     "nameEn": "Wan Li (Linping)",
     "city": "杭州",
-    "address": "2-3F，Renaissance 北东 酒店，607 Renmin 大道，Nanyuan 街，Linping，杭州，中国se 大陆",
+    "address": "南苑街道人民大道607号杭州临平万丽酒店16层",
     "latitude": "30.4175463",
     "longitude": "120.3057403",
     "award": "selected",
@@ -22965,15 +22973,17 @@
     "website": "https://www.marriott.com/en-us/hotels/hghne-renaissance-hangzhou-northeast-hotel/dining",
     "description": "主营浙菜。米其林指南入选餐厅。值得一试的用餐体验。",
     "priceLabel": "中等价位",
-    "nameZh": "万里（临平）",
+    "nameZh": "杭州临平万丽酒店·万丽轩中餐厅",
     "imageUrl": "/michelin-photos/1325-wan-li.jpg",
     "imageUrls": [
       "/michelin-photos/1325-wan-li.jpg",
       "/michelin-photos/1325-wan-li-2.jpg",
       "/michelin-photos/1325-wan-li-3.jpg"
     ],
-    "aiPoiDecision": "rejected",
-    "aiPoiReason": "Pi/Kimi rejected: *Wan Li* 更像酒店中文名 **万丽**，而候选是 **杭州临平万丽酒店·燃餐厅**；这是酒店内另一餐厅，非目标餐厅名本身，应拒绝。"
+    "aiPoiDecision": "accepted",
+    "aiPoiReason": "Pi/Kimi rescued rejected via Baidu browser search: 结果明确写出 **“杭州临平万丽酒店内的中餐厅，中文名为‘万丽轩’”**，酒店与人民大道607号地址均吻合。",
+    "amapPoiId": "B0LG6LII4N",
+    "amapLocation": "120.310334,30.415323"
   },
   {
     "id": 1326,
@@ -24816,10 +24826,10 @@
   },
   {
     "id": 1421,
-    "name": "Wang Shi Shao Bing (Xixi Road)",
+    "name": "文武王氏烧饼·无矾油条(西溪路店)",
     "nameEn": "Wang Shi Shao Bing (Xixi Road)",
     "city": "杭州",
-    "address": "60 Xixi 路，Xihu，杭州，中国se 大陆",
+    "address": "西溪路58号",
     "latitude": "30.26091",
     "longitude": "120.149628",
     "award": "selected",
@@ -24829,15 +24839,17 @@
     "website": null,
     "description": "主营小吃。米其林指南入选餐厅。值得一试的用餐体验。",
     "priceLabel": "平价",
-    "nameZh": "王氏少兵（西溪路）",
+    "nameZh": "文武王氏烧饼·无矾油条(西溪路店)",
     "imageUrl": "/michelin-photos/1421-wang-shi-shao-bing.jpg",
     "imageUrls": [
       "/michelin-photos/1421-wang-shi-shao-bing.jpg",
       "/michelin-photos/1421-wang-shi-shao-bing-2.jpg",
       "/michelin-photos/1421-wang-shi-shao-bing-3.jpg"
     ],
-    "aiPoiDecision": "rejected",
-    "aiPoiReason": "Pi/Kimi rejected: 无对应名称候选，最近是冰淇淋店。"
+    "aiPoiDecision": "accepted",
+    "aiPoiReason": "Pi/Kimi rescued rejected via Baidu browser search: 结果明确称正式中文名为 **“王氏烧饼”**，并说明店铺地址明确、为杭州米其林入选/必比登语境中的早餐店，适合按同名同址找 POI。",
+    "amapPoiId": "B0FFFA6IKC",
+    "amapLocation": "120.143103,30.269925"
   },
   {
     "id": 1422,
