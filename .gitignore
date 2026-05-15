@@ -34,6 +34,7 @@ dist-ssr
 *-poi-evidence.json
 *-web-evidence.json
 *-browser-evidence.json
+*-rejected-evidence.json
 *-browser-decisions.md
 *-web-evidence-decisions.md
 *-poi-ai-review.md
