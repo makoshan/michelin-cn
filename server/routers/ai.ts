@@ -66,10 +66,12 @@ export const aiRouter = createRouter({
     })
   ).mutation(async ({ input }) => {
     let db: ReturnType<typeof getDb> | null = null;
-    try {
-      db = getDb();
-    } catch {
-      db = null;
+    if (process.env.AI_CHAT_PERSISTENCE === "1") {
+      try {
+        db = getDb();
+      } catch {
+        db = null;
+      }
     }
     let sessionId = input.sessionId;
 

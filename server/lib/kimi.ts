@@ -29,8 +29,12 @@ export async function callKimi(prompt: string) {
     { role: "user", content: prompt },
   ];
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+
   const response = await fetch(`${env.kimiApiBaseUrl}/chat/completions`, {
     method: "POST",
+    signal: controller.signal,
     headers: {
       Authorization: `Bearer ${env.kimiApiKey}`,
       "Content-Type": "application/json",
@@ -41,7 +45,7 @@ export async function callKimi(prompt: string) {
       temperature: 1,
       stream: false,
     }),
-  });
+  }).finally(() => clearTimeout(timeout));
 
   const payload = (await response.json()) as ChatCompletionResponse;
   if (!response.ok) {
