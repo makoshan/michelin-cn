@@ -23,6 +23,7 @@
     "evidence:rejected-web": "node scripts/brave-rejected-web-evidence.cjs",
     "decide:pi-web-evidence": "node scripts/pi-web-evidence-decide.cjs",
     "decide:pi-rejected-rescue": "node scripts/pi-rescue-rejected-decide.cjs",
+    "apply:web-evidence-rescue": "node scripts/apply-web-evidence-rescue.cjs",
     "apply:rejected-rescue": "node scripts/apply-rejected-rescue.cjs",
     "apply:pi-poi": "node scripts/apply-pi-poi-decisions.cjs",
     "enrich:amap-addresses": "node scripts/enrich-amap-addresses.cjs",

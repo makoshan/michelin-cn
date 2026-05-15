@@ -21197,10 +21197,10 @@
   },
   {
     "id": 1235,
-    "name": "Rong Xian Mian Guan (Qianjiang Road)",
+    "name": "荣鲜面馆(钱江路店)",
     "nameEn": "Rong Xian Mian Guan (Qianjiang Road)",
     "city": "杭州",
-    "address": "629 Qianjiang 路，Shangcheng，杭州，中国se 大陆",
+    "address": "钱江路555号日信国际1层",
     "latitude": "30.2375011",
     "longitude": "120.1907208",
     "award": "bib-gourmand",
@@ -21210,14 +21210,16 @@
     "website": null,
     "description": "主营面食。必比登推介，性价比之选。值得一试的用餐体验。",
     "priceLabel": "平价",
-    "nameZh": "荣仙面馆（钱江路）",
+    "nameZh": "荣鲜面馆(钱江路店)",
     "imageUrl": "/michelin-photos/1235-rong-xian-mian-guan.jpg",
     "imageUrls": [
       "/michelin-photos/1235-rong-xian-mian-guan.jpg",
       "/michelin-photos/1235-rong-xian-mian-guan-2.jpg"
     ],
-    "aiPoiDecision": "rejected",
-    "aiPoiReason": "Pi/Kimi rejected: 候选名称、地址均不能对应 *Rong Xian Mian Guan (Qianjiang Road)*。"
+    "aiPoiDecision": "accepted",
+    "aiPoiReason": "Pi/Kimi rescued rejected via web Chinese-name evidence: 权威网页明确给出中文名“荣鲜面馆(钱江路)”；高德召回到“荣鲜面馆(钱江路店)”，名称一致、且同在钱江路，可救回。",
+    "amapPoiId": "B0FFIPS9J1",
+    "amapLocation": "120.195515,30.235106"
   },
   {
     "id": 1236,
@@ -23846,10 +23848,10 @@
   },
   {
     "id": 1371,
-    "name": "Guan Yan Liu Jin",
+    "name": "观言·鎏金(湖滨银泰in77A区北区店)",
     "nameEn": "Guan Yan Liu Jin",
     "city": "杭州",
-    "address": "3F，段 A，Hubin Yintai in77，123 Pinghai 路，Shangcheng，杭州，中国se 大陆",
+    "address": "延安路233号杭州湖滨银泰IN77A区三楼",
     "latitude": "30.2556678",
     "longitude": "120.1577932",
     "award": "selected",
@@ -23859,15 +23861,17 @@
     "website": null,
     "description": "主营潮州菜。米其林指南入选餐厅。值得一试的用餐体验。",
     "priceLabel": "高价位",
-    "nameZh": "关严刘金",
+    "nameZh": "观言·鎏金(湖滨银泰in77A区北区店)",
     "imageUrl": "/michelin-photos/1371-guan-yan-liu-jin.jpg",
     "imageUrls": [
       "/michelin-photos/1371-guan-yan-liu-jin.jpg",
       "/michelin-photos/1371-guan-yan-liu-jin-2.jpg",
       "/michelin-photos/1371-guan-yan-liu-jin-3.jpg"
     ],
-    "aiPoiDecision": "rejected",
-    "aiPoiReason": "Pi/Kimi rejected: 高德候选为 Tiffany 零售店，明显误配。"
+    "aiPoiDecision": "accepted",
+    "aiPoiReason": "Pi/Kimi rescued rejected via web Chinese-name evidence: 权威网页明确给出中文名“观言鎏金”；高德 POI 为“观言·鎏金”，且地址同属湖滨银泰 in77 A 区 3 楼，属同名同址近似，可救回。",
+    "amapPoiId": "B0HR1HCJMW",
+    "amapLocation": "120.162653,30.253696"
   },
   {
     "id": 1372,
