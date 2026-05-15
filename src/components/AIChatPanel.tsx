@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { X, Bot, Send, User, Sparkles } from "lucide-react";
-import { trpc } from "@/providers/trpc";
+import { askAIAdvisor } from "@/lib/aiAdvisor";
 
 interface Props {
   open: boolean;
@@ -22,7 +22,6 @@ export default function AIChatPanel({ open, onClose }: Props) {
   const [sessionId, setSessionId] = useState<number | undefined>();
   const [isTyping, setIsTyping] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const chatMutation = trpc.ai.chat.useMutation();
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -39,7 +38,7 @@ export default function AIChatPanel({ open, onClose }: Props) {
     setIsTyping(true);
 
     try {
-      const result = await chatMutation.mutateAsync({ message, sessionId });
+      const result = await askAIAdvisor(message, sessionId);
       setSessionId(result.sessionId);
       setMessages((prev) => [...prev, { role: "assistant", content: result.response }]);
     } catch {

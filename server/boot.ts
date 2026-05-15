@@ -7,11 +7,21 @@ import { createContext } from "./context";
 import { env } from "./lib/env";
 import { createOAuthCallbackHandler } from "./kimi/auth";
 import { Paths } from "@contracts/constants";
+import { createAiAdvisorResponse } from "./lib/aiAdvisor";
 
 const app = new Hono<{ Bindings: HttpBindings }>();
 
 app.use(bodyLimit({ maxSize: 50 * 1024 * 1024 }));
 app.get(Paths.oauthCallback, createOAuthCallbackHandler());
+app.get("/api/ai/chat", async (c) => {
+  const message = c.req.query("message")?.trim();
+  const sessionId = Number(c.req.query("sessionId"));
+  if (!message) return c.json({ error: "message is required" }, 400);
+  return c.json(await createAiAdvisorResponse({
+    message,
+    sessionId: Number.isFinite(sessionId) ? sessionId : undefined,
+  }));
+});
 app.use("/api/trpc/*", async (c) => {
   return fetchRequestHandler({
     endpoint: "/api/trpc",

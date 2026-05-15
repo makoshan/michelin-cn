@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Bot, Send, Sparkles, Compass } from "lucide-react";
-import { trpc } from "@/providers/trpc";
+import { askAIAdvisor } from "@/lib/aiAdvisor";
 
 const quickPrompts = [
   "推荐一家上海粤菜餐厅",
@@ -19,7 +19,6 @@ export default function AIAdvisor() {
   const [sessionId, setSessionId] = useState<number | undefined>();
   const [isTyping, setIsTyping] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const chatMutation = trpc.ai.chat.useMutation();
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -36,7 +35,7 @@ export default function AIAdvisor() {
     setIsTyping(true);
 
     try {
-      const result = await chatMutation.mutateAsync({ message, sessionId });
+      const result = await askAIAdvisor(message, sessionId);
       setSessionId(result.sessionId);
       setMessages((prev) => [...prev, { role: "assistant", content: result.response }]);
     } catch {
