@@ -41,11 +41,16 @@ export default function Layout() {
   };
 
   const navItems = [
-    { label: $t("nav.discover"), icon: Compass, path: "/discover" },
     { label: $t("nav.map"), icon: MapPin, path: "/map" },
+    { label: $t("nav.discover"), icon: Compass, path: "/discover" },
     { label: $t("nav.city"), icon: MapPin, path: "/city/杭州" },
     { label: $t("nav.favorites"), icon: Heart, path: "/favorites" },
   ];
+
+  const isActiveNavItem = (path: string) => {
+    const basePath = path.startsWith("/city/") ? "/city" : path;
+    return location.pathname === basePath || location.pathname.startsWith(`${basePath}/`);
+  };
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "var(--bg-primary)", color: "var(--text-primary)" }}>
@@ -55,7 +60,7 @@ export default function Layout() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}>
+            <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/map")}>
               <span className="text-lg font-bold tracking-wide" style={{ fontFamily: "'Playfair Display', Georgia, serif", color: "var(--accent-gold)" }}>
                 MICHELIN GUIDE
               </span>
@@ -68,7 +73,7 @@ export default function Layout() {
               {navItems.map((item) => (
                 <button key={item.path} onClick={() => navigate(item.path)}
                   className="flex items-center gap-1.5 text-sm transition-colors hover:text-[var(--accent-gold)]"
-                  style={{ color: location.pathname.startsWith(item.path.split("/")[1] || item.path) ? "var(--accent-gold)" : "var(--text-secondary)" }}>
+                  style={{ color: isActiveNavItem(item.path) ? "var(--accent-gold)" : "var(--text-secondary)" }}>
                   <item.icon size={16} />{item.label}
                 </button>
               ))}

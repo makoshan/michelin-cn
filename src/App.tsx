@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Navigate, Routes, Route } from "react-router-dom";
 import { TRPCProvider } from "@/providers/trpc";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
@@ -16,7 +16,8 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navigate to="/map" replace />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/discover" element={<Discovery />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/city/:city" element={<CityView />} />
